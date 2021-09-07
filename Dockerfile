@@ -14,6 +14,8 @@ RUN apt-get update && \
         build-essential \
     && apt-get clean
 
+# We need this to initiate the files
+RUN service ssh start
 
 COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install --no-cache -r /tmp/requirements.txt
